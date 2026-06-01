@@ -47,6 +47,28 @@
       color: #888;
     }
   </style>
+  .gallery{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-top:50px;
+}
+
+.gallery img{
+  object-fit:cover;
+}
+
+.large{
+  width:100%;
+}
+
+.medium{
+  width:65%;
+}
+
+.small{
+  width:calc(50% - 10px);
+}
 </head>
 
 <body>
@@ -58,15 +80,13 @@
      style="max-width:800px; width:100%; margin-top:30px;">
     <img src="./A6700276.jpeg"
      style="max-width:800px; width:100%; margin-top:30px;">
-    <div class="section">
-      <h2>Selected Works</h2>
-      <ul>
-        <li>Japan</li>
-        <li>Korea</li>
-        <li>United States</li>
-        <li>Series</li>
-      </ul>
-    </div>
+
+    <div class="gallery">
+  <img class="large" src="./A6700220.jpeg">
+  <img class="small" src="./A6700078.jpeg">
+  <img class="small" src="./A6700172.jpeg">
+  <img class="medium" src="./A6700276.jpeg">
+</div>
 
     <div class="section">
       <h2>About</h2>
