@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,166 +8,101 @@
 <title>keuyu photography</title>
 
 <style>
+
 body{
-  margin:0;
-  background:#fafafa;
-  color:#111;
-  font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#fafafa;
+    color:#111;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.cover{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  max-width:900px;
-  margin:auto;
-  padding:40px 24px;
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 30px;
 }
 
 h1{
-  font-size:44px;
-  letter-spacing:2px;
-  margin:0 0 12px;
+    font-size:42px;
+    margin-bottom:10px;
 }
 
 .subtitle{
-  color:#777;
-  font-size:18px;
+    color:#777;
+    margin-bottom:80px;
 }
 
-.book{
-  max-width:1000px;
-  margin:auto;
-  padding:0 24px;
+.photo{
+    text-align:center;
+    margin-bottom:140px;
 }
 
-.page{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:80px 0;
-  box-sizing:border-box;
-}
-
-.page img{
-  max-width:65%;
-  max-height:60vh;
-  width:auto;
-  height:auto;
-  display:block;
-  border-radius:4px;
-}
-
-.two{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-}
-
-.two img{
-  max-width:100%;
-  max-height:75vh;
+.photo img{
+    max-width:65%;
+    max-height:65vh;
+    width:auto;
+    height:auto;
+    display:inline-block;
 }
 
 .about{
-  min-height:80vh;
-  max-width:700px;
-  margin:auto;
-  padding:120px 24px;
-  box-sizing:border-box;
-}
-
-.about p{
-  color:#555;
-  line-height:1.7;
+    max-width:600px;
+    margin:100px auto;
+    line-height:1.8;
+    color:#555;
 }
 
 footer{
-  margin-top:80px;
-  color:#888;
-  font-size:12px;
+    margin-top:60px;
+    color:#999;
+    font-size:12px;
 }
 
-@media(max-width:700px){
-  h1{
-    font-size:36px;
-  }
-
-  .page{
-    min-height:85vh;
-    padding:50px 0;
-  }
-
-  .page img{
-    max-width:100%;
-    max-height:75vh;
-  }
-
-  .two{
-    grid-template-columns:1fr;
-    gap:50px;
-  }
-}
 </style>
 </head>
 
 <body>
 
-<section class="cover">
-  <h1>keuyu</h1>
-  <div class="subtitle">Photography</div>
-</section>
+<div class="container">
 
-<main class="book">
+    <h1>keuyu</h1>
 
-  <section class="page">
-    <img src="./A6700220.jpeg">
-  </section>
+    <div class="subtitle">
+        Photography
+    </div>
 
-  <section class="page">
-    <img src="./A6700149.jpeg">
-  </section>
+    <div class="photo">
+        <img src="./A6700220.jpeg">
+    </div>
 
-  <section class="page">
-    <img src="./A6700172.jpeg">
-  </section>
+    <div class="photo">
+        <img src="./A6700078.jpeg">
+    </div>
 
-  <section class="page">
-    <img src="./A6700276.jpeg">
-  </section>
+    <div class="photo">
+        <img src="./A6700172.jpeg">
+    </div>
 
-  <section class="page">
-    <img src="./A6700216.jpeg">
-  </section>
+    <div class="photo">
+        <img src="./A6700276.jpeg">
+    </div>
 
-  <section class="page">
-    <img src="./DSC01130.jpeg">
-  </section>
+    <div class="about">
 
-    <section class="page">
-    <img src="./DSC01142.jpeg">
-  </section>
+        <h2>About</h2>
 
-    <section class="page">
-    <img src="./DSC011190.jpeg">
-  </section>
+        <p>
+            Photography by keuyu.
+            Travel, sea, and quiet moments.
+        </p>
 
-</main>
+        <footer>
+            © keuyu
+        </footer>
 
-<section class="about">
-  <h2>About</h2>
-  <p>
-    Photography by keuyu.<br>
-    Travel, sea, and quiet moments.<br>
-    Welcome to visit my IG: keuyu.photos
-  </p>
+    </div>
 
-  <footer>
-    © keuyu
-  </footer>
-</section>
+</div>
 
 </body>
 </html>
