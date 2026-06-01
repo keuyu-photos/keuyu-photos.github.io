@@ -7,108 +7,149 @@
 <title>keuyu photography</title>
 
 <style>
-
 body{
-    margin:0;
-    background:#ffffff;
-    color:#111;
-    font-family:Arial, Helvetica, sans-serif;
+  margin:0;
+  background:#fafafa;
+  color:#111;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:60px 20px;
+.cover{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  max-width:900px;
+  margin:auto;
+  padding:40px 24px;
 }
 
 h1{
-    font-size:42px;
-    letter-spacing:2px;
-    margin-bottom:10px;
+  font-size:44px;
+  letter-spacing:2px;
+  margin:0 0 12px;
 }
 
 .subtitle{
-    color:#777;
-    margin-bottom:60px;
+  color:#777;
+  font-size:18px;
 }
 
-.gallery{
-    display:flex;
-    flex-direction:column;
-    gap:80px;
+.book{
+  max-width:1000px;
+  margin:auto;
+  padding:0 24px;
 }
 
-.gallery img{
-    display:block;
-    height:auto;
-    border-radius:4px;
+.page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:80px 0;
+  box-sizing:border-box;
 }
 
-.large{
-    width:75%;
-    margin-left:auto;
-    margin-right:auto;
+.page img{
+  max-width:85%;
+  max-height:82vh;
+  width:auto;
+  height:auto;
+  display:block;
+  border-radius:4px;
 }
 
-.medium{
-    width:55%;
-    margin-left:0;
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
 }
 
-.small{
-    width:40%;
-    margin-left:auto;
+.two img{
+  max-width:100%;
+  max-height:75vh;
 }
 
 .about{
-    margin-top:120px;
-    max-width:600px;
+  min-height:80vh;
+  max-width:700px;
+  margin:auto;
+  padding:120px 24px;
+  box-sizing:border-box;
+}
+
+.about p{
+  color:#555;
+  line-height:1.7;
 }
 
 footer{
-    margin-top:80px;
-    color:#888;
-    font-size:12px;
+  margin-top:80px;
+  color:#888;
+  font-size:12px;
 }
 
+@media(max-width:700px){
+  h1{
+    font-size:36px;
+  }
+
+  .page{
+    min-height:85vh;
+    padding:50px 0;
+  }
+
+  .page img{
+    max-width:100%;
+    max-height:75vh;
+  }
+
+  .two{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<section class="cover">
+  <h1>keuyu</h1>
+  <div class="subtitle">Photography</div>
+</section>
 
-    <h1>keuyu</h1>
-    <div class="subtitle">Photography</div>
+<main class="book">
 
-    <div class="gallery">
+  <section class="page">
+    <img src="./A6700220.jpeg">
+  </section>
 
-        <img class="large" src="./A6700220.jpeg">
+  <section class="page">
+    <img src="./A6700078.jpeg">
+  </section>
 
-        <img class="small" src="./A6700284.jpeg">
+  <section class="page">
+    <img src="./A6700172.jpeg">
+  </section>
 
-        <img class="medium" src="./A6700172.jpeg">
+  <section class="page">
+    <img src="./A6700276.jpeg">
+  </section>
 
-        <img class="large" src="./A6700276.jpeg">
+</main>
 
-    </div>
+<section class="about">
+  <h2>About</h2>
+  <p>
+    Photography by keuyu.<br>
+    Travel, sea, and quiet moments.
+  </p>
 
-    <div class="about">
-
-        <h2>About</h2>
-
-        <p>
-            Photography by keuyu.
-            Travel, sea, and quiet moments.
-        </p>
-
-    </div>
-
-    <footer>
-        © keuyu
-    </footer>
-
-</div>
+  <footer>
+    © keuyu
+  </footer>
+</section>
 
 </body>
 </html>
