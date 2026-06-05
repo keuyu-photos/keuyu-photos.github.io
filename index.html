@@ -7,7 +7,6 @@
 <title>keuyu photography</title>
 
 <style>
-
 body{
     margin:0;
     background:#fafafa;
@@ -60,8 +59,28 @@ button{
     color:#777;
 }
 
-</style>
+.about{
+    max-width:700px;
+    margin:120px auto 80px auto;
+    padding:0 40px;
+    color:#555;
+    line-height:1.8;
+}
 
+.about h2{
+    color:#111;
+}
+
+.about a{
+    color:#111;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.about a:hover{
+    text-decoration:underline;
+}
+</style>
 </head>
 
 <body>
@@ -73,105 +92,77 @@ button{
 
     <div class="viewer">
 
-        <img id="photo"
-        src="./images/Series/A6700078.jpeg">
+        <img id="photo" src="./images/Series/A6700078.jpeg">
 
         <div class="controls">
-            <button onclick="previousPhoto()">
-                ← Previous
-            </button>
-
-            <button onclick="nextPhoto()">
-                Next →
-            </button>
+            <button onclick="previousPhoto()">← Previous</button>
+            <button onclick="nextPhoto()">Next →</button>
         </div>
 
-        <div class="counter" id="counter">
-            1 / 10
-        </div>
+        <div class="counter" id="counter">1 / 10</div>
 
     </div>
 
 </div>
 
+<section class="about">
+
+    <h2>About</h2>
+
+    <p>
+        Photography by keuyu.<br>
+        Travel, sea, and quiet moments.<br>
+        Instagram:
+        <a href="https://www.instagram.com/keuyu.photos" target="_blank">
+            @keuyu.photos
+        </a>
+    </p>
+
+    <footer>
+        © keuyu
+    </footer>
+
+</section>
+
 <script>
-
 const photos = [
-
-"./images/Series/A6700078.jpeg",
-"./images/Series/A6700100.jpeg",
-"./images/Series/A6700133.jpeg",
-"./images/Series/A6700149.jpeg",
-"./images/Series/A6700172.jpeg",
-"./images/Series/A6700200.jpeg",
-"./images/Series/A6700216.jpeg",
-"./images/Series/A6700276.jpeg",
-"./images/Series/A6700284.jpeg",
-"./images/Series/A6700297.jpeg"
-
+    "./images/Series/A6700078.jpeg",
+    "./images/Series/A6700100.jpeg",
+    "./images/Series/A6700133.jpeg",
+    "./images/Series/A6700149.jpeg",
+    "./images/Series/A6700172.jpeg",
+    "./images/Series/A6700200.jpeg",
+    "./images/Series/A6700216.jpeg",
+    "./images/Series/A6700276.jpeg",
+    "./images/Series/A6700284.jpeg",
+    "./images/Series/A6700297.jpeg"
 ];
 
 let current = 0;
 
-const image =
-document.getElementById("photo");
-
-const counter =
-document.getElementById("counter");
+const image = document.getElementById("photo");
+const counter = document.getElementById("counter");
 
 function updatePhoto(){
-
     image.src = photos[current];
-
-    counter.innerHTML =
-    (current + 1)
-    + " / "
-    + photos.length;
-
+    counter.innerHTML = (current + 1) + " / " + photos.length;
 }
 
 function nextPhoto(){
-
     current++;
-
     if(current >= photos.length){
-
         current = 0;
-
     }
-
     updatePhoto();
-
 }
 
 function previousPhoto(){
-
     current--;
-
     if(current < 0){
-
-        current =
-        photos.length - 1;
-
+        current = photos.length - 1;
     }
-
     updatePhoto();
-
 }
-
-    <section class="about">
-  <h2>About</h2>
-  <p>
-    Photography by keuyu.<br>
-    Travel, sea, and quiet moments.br>
-    Welcome to add my IG:keuyu.photos
-  </p>
-
-  <footer>
-    © keuyu
-  </footer>
-</section>
-    
 </script>
 
 </body>
