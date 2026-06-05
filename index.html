@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,53 +11,57 @@
 body{
     margin:0;
     background:#fafafa;
-    color:#111;
     font-family:Arial, Helvetica, sans-serif;
+    color:#111;
 }
 
 .container{
     max-width:1200px;
     margin:auto;
-    padding:60px 30px;
+    padding:40px;
 }
 
 h1{
-    font-size:42px;
-    margin-bottom:10px;
+    margin:0;
+    font-size:48px;
 }
 
 .subtitle{
     color:#777;
-    margin-bottom:80px;
+    margin-top:10px;
 }
 
-.photo{
+.viewer{
     text-align:center;
-    margin-bottom:140px;
+    margin-top:40px;
 }
 
-.photo img{
-    max-width:65%;
-    max-height:65vh;
+.viewer img{
+    max-width:70%;
+    max-height:70vh;
     width:auto;
     height:auto;
-    display:inline-block;
 }
 
-.about{
-    max-width:600px;
-    margin:100px auto;
-    line-height:1.8;
-    color:#555;
+.controls{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
 }
 
-footer{
-    margin-top:60px;
-    color:#999;
-    font-size:12px;
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+.counter{
+    margin-top:15px;
+    color:#777;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -66,48 +69,97 @@ footer{
 <div class="container">
 
     <h1>keuyu</h1>
+    <div class="subtitle">Photography</div>
 
-    <div class="subtitle">
-        Photography
-    </div>
+    <div class="viewer">
 
-    <div class="photo">
-        <img src="./A6700220.jpeg">
-    </div>
+        <img id="photo"
+        src="./images/Series/A6700078.jpeg">
 
-    <div class="photo">
-        <img src="./A6700297.jpeg">
-    </div>
+        <div class="controls">
+            <button onclick="previousPhoto()">
+                ← Previous
+            </button>
 
-        <div class="photo">
-        <img src="./A6700284.jpeg">
-    </div>
+            <button onclick="nextPhoto()">
+                Next →
+            </button>
+        </div>
 
-    <div class="photo">
-        <img src="./A6700172.jpeg">
-    </div>
-
-    <div class="photo">
-        <img src="./A6700276.jpeg">
-    </div>
-
-    <div class="about">
-
-        <h2>About</h2>
-
-        <p>
-            Photography by keuyu.<br>
-            Travel, sea, and quiet moments.<br>
-            Welcome to visit my IG: keuyu.photos
-        </p>
-
-        <footer>
-            © keuyu
-        </footer>
+        <div class="counter" id="counter">
+            1 / 10
+        </div>
 
     </div>
 
 </div>
+
+<script>
+
+const photos = [
+
+"./images/Series/A6700078.jpeg",
+"./images/Series/A6700100.jpeg",
+"./images/Series/A6700133.jpeg",
+"./images/Series/A6700149.jpeg",
+"./images/Series/A6700172.jpeg",
+"./images/Series/A6700200.jpeg",
+"./images/Series/A6700216.jpeg",
+"./images/Series/A6700276.jpeg",
+"./images/Series/A6700284.jpeg",
+"./images/Series/A6700297.jpeg"
+
+];
+
+let current = 0;
+
+const image =
+document.getElementById("photo");
+
+const counter =
+document.getElementById("counter");
+
+function updatePhoto(){
+
+    image.src = photos[current];
+
+    counter.innerHTML =
+    (current + 1)
+    + " / "
+    + photos.length;
+
+}
+
+function nextPhoto(){
+
+    current++;
+
+    if(current >= photos.length){
+
+        current = 0;
+
+    }
+
+    updatePhoto();
+
+}
+
+function previousPhoto(){
+
+    current--;
+
+    if(current < 0){
+
+        current =
+        photos.length - 1;
+
+    }
+
+    updatePhoto();
+
+}
+
+</script>
 
 </body>
 </html>
