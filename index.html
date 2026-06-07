@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
 <title>keuyu photography</title>
 
 <style>
+
 body{
     margin:0;
     background:#fafafa;
-    font-family:Arial, Helvetica, sans-serif;
     color:#111;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .container{
@@ -42,6 +44,13 @@ h1{
     height:auto;
 }
 
+.caption{
+    margin-top:20px;
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+}
+
 .controls{
     margin-top:30px;
     display:flex;
@@ -67,20 +76,14 @@ button{
     line-height:1.8;
 }
 
-.about h2{
-    color:#111;
-}
-
 .about a{
     color:#111;
     text-decoration:none;
     font-weight:bold;
 }
 
-.about a:hover{
-    text-decoration:underline;
-}
 </style>
+
 </head>
 
 <body>
@@ -88,18 +91,35 @@ button{
 <div class="container">
 
     <h1>keuyu</h1>
-    <div class="subtitle">Photography</div>
+
+    <div class="subtitle">
+        Photography
+    </div>
 
     <div class="viewer">
 
-        <img id="photo" src="./images/Series/A6700216.jpeg">
+        <img id="photo"
+        src="./images/Series/A6700216.jpeg">
 
-        <div class="controls">
-            <button onclick="previousPhoto()">← Previous</button>
-            <button onclick="nextPhoto()">Next →</button>
+        <div id="caption" class="caption">
+            The sea was quiet that morning.
         </div>
 
-        <div class="counter" id="counter">1 / 10</div>
+        <div class="controls">
+
+            <button onclick="previousPhoto()">
+                ← Previous
+            </button>
+
+            <button onclick="nextPhoto()">
+                Next →
+            </button>
+
+        </div>
+
+        <div class="counter" id="counter">
+            1 / 10
+        </div>
 
     </div>
 
@@ -108,57 +128,128 @@ button{
 <section class="about">
 
     <p>
-        A collection of travel, sea, and quiet moments.<br>
+        A collection of travel, sea, and quiet moments.<br><br>
+
         Instagram:
-        <a href="https://www.instagram.com/keuyu.photos" target="_blank">
+        <a href="https://www.instagram.com/keuyu.photos"
+        target="_blank">
             @keuyu.photos
         </a>
     </p>
 
-    <footer>
-    </footer>
-
 </section>
 
 <script>
+
 const photos = [
-    "./images/Series/A6700216.jpeg",
-    "./images/Series/A6700100.jpeg",
-    "./images/Series/A6700133.jpeg",
-    "./images/Series/A6700149.jpeg",
-    "./images/Series/A6700172.jpeg",
-    "./images/Series/A6700200.jpeg",
-    "./images/Series/A6700078.jpeg",
-    "./images/Series/A6700276.jpeg",
-    "./images/Series/A6700284.jpeg",
-    "./images/Series/A6700297.jpeg"
+
+{
+image:"./images/Series/A6700216.jpeg",
+caption:"The sea was quiet that morning."
+},
+
+{
+image:"./images/Series/A6700078.jpeg",
+caption:"Waiting for the next wave."
+},
+
+{
+image:"./images/Series/A6700100.jpeg",
+caption:"A short stop before sunset."
+},
+
+{
+image:"./images/Series/A6700133.jpeg",
+caption:"The sound of the sea remained."
+},
+
+{
+image:"./images/Series/A6700149.jpeg",
+caption:"A moment between departures."
+},
+
+{
+image:"./images/Series/A6700172.jpeg",
+caption:"The light faded slowly."
+},
+
+{
+image:"./images/Series/A6700200.jpeg",
+caption:"A quiet afternoon."
+},
+
+{
+image:"./images/Series/A6700276.jpeg",
+caption:"Looking towards the horizon."
+},
+
+{
+image:"./images/Series/A6700284.jpeg",
+caption:"The wind was stronger than it looked."
+},
+
+{
+image:"./images/Series/A6700297.jpeg",
+caption:"One last glance."
+}
+
 ];
 
 let current = 0;
 
-const image = document.getElementById("photo");
-const counter = document.getElementById("counter");
+const image =
+document.getElementById("photo");
+
+const caption =
+document.getElementById("caption");
+
+const counter =
+document.getElementById("counter");
 
 function updatePhoto(){
-    image.src = photos[current];
-    counter.innerHTML = (current + 1) + " / " + photos.length;
+
+    image.src =
+    photos[current].image;
+
+    caption.innerHTML =
+    photos[current].caption;
+
+    counter.innerHTML =
+    (current + 1)
+    + " / "
+    + photos.length;
+
 }
 
 function nextPhoto(){
+
     current++;
+
     if(current >= photos.length){
+
         current = 0;
+
     }
+
     updatePhoto();
+
 }
 
 function previousPhoto(){
+
     current--;
+
     if(current < 0){
-        current = photos.length - 1;
+
+        current =
+        photos.length - 1;
+
     }
+
     updatePhoto();
+
 }
+
 </script>
 
 </body>
